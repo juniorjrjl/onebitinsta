@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +11,14 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+
+  rootPage:string = "SignInPage";
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private auth: AuthService
   ) {
     this.initializeApp();
   }
@@ -23,5 +28,10 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+
+    this.auth.config(
+      () => this.rootPage = "TabsPage", 
+      () => this.rootPage = "SignInPage");
+    this.auth.checkLogin();
   }
 }

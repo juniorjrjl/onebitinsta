@@ -1,7 +1,8 @@
 {
   "name": "onebitinsta",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
