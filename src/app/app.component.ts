@@ -4,6 +4,7 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AuthService } from './auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +13,11 @@ import { AuthService } from './auth.service';
 })
 export class AppComponent {
 
-  rootPage:string = "SignInPage";
-
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
+    private router: Router,
     private auth: AuthService
   ) {
     this.initializeApp();
@@ -30,8 +30,8 @@ export class AppComponent {
     });
 
     this.auth.config(
-      () => this.rootPage = "TabsPage", 
-      () => this.rootPage = "SignInPage");
+      () => this.router.navigate(["tabs"]), 
+      () => this.router.navigate(["signIn"]));
     this.auth.checkLogin();
   }
 }

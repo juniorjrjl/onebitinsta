@@ -4,7 +4,6 @@ import { ToastController } from '@ionic/angular';
 import { API_URL } from './constants';
 import { Storage } from '@ionic/storage';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -29,11 +28,27 @@ export class AuthService {
   }
 
   login(email: string, password: string){
-    this.http.post<String>(`${API_URL}/users/sign_in`, { user: { email: email, password: password }  })
+    this.http.post<String>(`${API_URL}/users/sign_in`, { user: { email, password }  })
     .subscribe((data) => {
       this.setUser(data);
       this.ifSignedIn();
     }, (data) => this.showToast(data.error.error));
+  }
+
+  signUp(user){
+    this.http.post<String>(`${API_URL}/users`, { user })
+    .subscribe((data) => {
+      this.ifSignedIn();
+      this.setUser(data);
+      this.showToast("Signed up successfully", 200);
+    }, (data) => this.showToast(data.error.error));
+  }
+
+  logout(){
+    this.storage.remove('user');
+    this._currentUser = null;
+    this.ifSignedOut();
+    this.showToast("Signed out successfullye", 2000)
   }
 
   private setUser(user){
@@ -41,7 +56,7 @@ export class AuthService {
     this.storage.set('user', user);
   }
 
-  private async showToast(message, duration = 5000){
+  private async showToast(message: string, duration = 5000){
     const toast = await this.toast.create({
       message,
       duration

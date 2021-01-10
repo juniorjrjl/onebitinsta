@@ -1,3 +1,20 @@
 <ion-header>
-  <app-header pageTitle="Logout"></app-header>
+  <app-header></app-header>
 </ion-header>
+ 
+<ion-content padding>
+  <ion-grid>
+    <ion-row margin-top>
+      <ion-col text-center>
+        <h4 ion-text>Are you sure you want to leave us?</h4>
+      </ion-col>
+    </ion-row>
+ 
+    <ion-row margin-top>
+      <ion-col>
+        <ion-button type="button" expand="block" color="danger" (click)="confirmLogout()">Yes :'(</ion-button>
+        <ion-button type="button" expand="block" color="primary" margin-top (click)="denyLogout()">No :)</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

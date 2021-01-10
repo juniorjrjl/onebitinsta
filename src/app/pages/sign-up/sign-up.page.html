@@ -1,9 +1,56 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>sign-up</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
+<ion-content padding>
+  <form (ngSubmit)="onSignUp(form)" #form="ngForm">
+    <ion-grid>
+      <ion-row margin-top>
+        <ion-col text-center>
+          <h3 ion-text>OnebitInsta</h3>
+        </ion-col>
+      </ion-row>
+ 
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Name</ion-label>
+            <ion-input type="text" name="name" ngModel required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+ 
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" name="email" ngModel required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+ 
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" name="password" ngModel required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+ 
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Password Confirmation</ion-label>
+            <ion-input type="password" name="password_confirmation" ngModel required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+ 
+      <ion-row margin-top>
+        <ion-col>
+          <ion-button type="submit" expand="block" color="primary" [disabled]="form.invalid">SIGN UP</ion-button>
+          <ion-button type="button" expand="block" fill="clear" color="primary" (click)="backToLoginPage()">
+            I've already have an account
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>
