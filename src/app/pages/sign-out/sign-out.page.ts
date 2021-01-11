@@ -10,14 +10,13 @@ import {Location} from '@angular/common';
 })
 export class SignOutPage {
 
-  constructor(private auth: AuthService, private router: Router, private location: Location) { }
+  constructor(private authService: AuthService, private router: Router, private location: Location) { }
 
   confirmLogout(){
-    this.auth.logout();
+    this.authService.logout();
   }
 
   denyLogout(){
-    //this.router.navigate([".."]);
     this.location.back();
   }
 

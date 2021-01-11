@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ToastController } from '@ionic/angular';
 import { API_URL } from './constants';
 import { Storage } from '@ionic/storage';
@@ -9,11 +9,18 @@ import { Storage } from '@ionic/storage';
 })
 export class AuthService {
 
-  private _currentUser: {} = null;
+  private _currentUser: {email: string, authentication_token: string} = null;
   private ifSignedIn = () => {};
   private ifSignedOut = () => {};
 
   constructor(private http: HttpClient, private storage: Storage, private toast: ToastController){}
+
+  authHeader(){
+    return new HttpHeaders({
+      'X-User-Email': this._currentUser.email,
+      'X-User-Token': this._currentUser.authentication_token
+    })
+  }
 
   config(ifSignedIn = () => {}, ifSignedOut = () => {}){
     this.ifSignedIn = ifSignedIn;

@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module'
 import { IonicStorageModule } from '@ionic/storage';
 import { AuthService } from './auth.service';
+import { PostService } from './post.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     SplashScreen,
     { provide: ErrorHandler, useClass: ErrorHandler },
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    AuthService
+    AuthService,
+    PostService
   ],
   exports:[],
   bootstrap: [AppComponent]

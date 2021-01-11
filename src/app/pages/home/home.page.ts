@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { Post } from 'src/app/models/post';
+import { PostService } from 'src/app/post.service';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,13 @@ import { NavController } from '@ionic/angular';
 })
 export class HomePage {
 
-  constructor(public nacCtrl: NavController) {}
+  public posts: Post[] = [];
+
+  constructor(private postService: PostService) {}
+
+  ionViewWillEnter() {
+    const homePosts = this.postService.homePosts();
+    homePosts.then(response => this.posts = response);
+  }
 
 }

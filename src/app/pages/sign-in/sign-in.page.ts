@@ -10,10 +10,10 @@ import { AuthService } from 'src/app/auth.service';
 })
 export class SignInPage {
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   onLogin(form: NgForm){
-    this.auth.login(form.value.email, form.value.password);
+    this.authService.login(form.value.email, form.value.password);
   }
 
   goToSignUpPage(){

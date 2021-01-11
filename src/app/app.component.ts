@@ -18,7 +18,7 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private router: Router,
-    private auth: AuthService
+    private authService: AuthService
   ) {
     this.initializeApp();
   }
@@ -29,9 +29,9 @@ export class AppComponent {
       this.splashScreen.hide();
     });
 
-    this.auth.config(
+    this.authService.config(
       () => this.router.navigate(["tabs"]), 
       () => this.router.navigate(["signIn"]));
-    this.auth.checkLogin();
+    this.authService.checkLogin();
   }
 }
