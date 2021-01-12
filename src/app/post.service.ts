@@ -21,8 +21,7 @@ export class PostService {
   private formatPost(data){
     let posts: Post[] = [];
     for(let post of data.data.reverse()) {
-      const postFormatter = new PostFormatter(post, data.included);
-      posts.push(postFormatter.call());
+      posts.push(PostFormatter.call(post, data.included));
     }
     return posts;
   }
