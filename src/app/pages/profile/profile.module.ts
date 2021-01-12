@@ -8,6 +8,8 @@ import { ProfilePageRoutingModule } from './profile-routing.module';
 
 import { ProfilePage } from './profile.page';
 import { HeaderComponent } from '../../header/header.component';
+import { ProfileComponent } from 'src/app/profile/profile.component';
+import { PostListComponent } from 'src/app/post-list/post-list.component';
 
 @NgModule({
   imports: [
@@ -16,6 +18,6 @@ import { HeaderComponent } from '../../header/header.component';
     IonicModule,
     ProfilePageRoutingModule
   ],
-  declarations: [ProfilePage, HeaderComponent]
+  declarations: [ProfilePage, HeaderComponent, ProfileComponent, PostListComponent]
 })
 export class ProfilePageModule {}

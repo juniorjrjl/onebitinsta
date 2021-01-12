@@ -1,3 +1,20 @@
 <ion-header>
   <app-header pageTitle="Profile"></app-header>
 </ion-header>
+ 
+<ion-content>
+  <app-profile [user]="currentUser" isMe="true" ></app-profile>
+  <app-post-list [posts]="posts" showToolbar="show" currentList="group"></app-post-list>
+ 
+  <ion-fab horizontal="start" vertical="bottom">
+    <ion-fab-button>
+      <ion-icon icon="create"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+ 
+  <ion-fab horizontal="end" vertical="bottom">
+    <ion-fab-button color="secondary" (click)="newPost()">
+      <ion-icon icon="paper-plane"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

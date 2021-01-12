@@ -9,17 +9,16 @@ import { Storage } from '@ionic/storage';
 })
 export class AuthService {
 
-  private _currentUser: {email: string, authentication_token: string} = null;
+  private _currentUser: {id: number, email: string, authentication_token: string} = null;
   private ifSignedIn = () => {};
   private ifSignedOut = () => {};
 
   constructor(private http: HttpClient, private storage: Storage, private toast: ToastController){}
 
-  authHeader(){
-    return new HttpHeaders({
-      'X-User-Email': this._currentUser.email,
-      'X-User-Token': this._currentUser.authentication_token
-    })
+  authHeader(): HttpHeaders{
+    return new HttpHeaders()
+      .set('X-User-Email', this._currentUser.email)
+      .set('X-User-Token', this._currentUser.authentication_token);
   }
 
   config(ifSignedIn = () => {}, ifSignedOut = () => {}){
@@ -35,7 +34,7 @@ export class AuthService {
   }
 
   login(email: string, password: string){
-    this.http.post<String>(`${API_URL}/users/sign_in`, { user: { email, password }  })
+    this.http.post<any>(`${API_URL}/users/sign_in`, { user: { email, password }  })
     .subscribe((data) => {
       this.setUser(data);
       this.ifSignedIn();
@@ -56,6 +55,10 @@ export class AuthService {
     this._currentUser = null;
     this.ifSignedOut();
     this.showToast("Signed out successfullye", 2000)
+  }
+
+  get currentUser(): {id: number, email: string, authentication_token: string}{
+    return this._currentUser;
   }
 
   private setUser(user){

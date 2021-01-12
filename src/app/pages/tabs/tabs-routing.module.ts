@@ -24,6 +24,16 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'contact',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../profile/profile.module').then(m => m.ProfilePageModule)
+          }
+        ]
+      },
+      {
         path: 'post',
         children: [
           {
