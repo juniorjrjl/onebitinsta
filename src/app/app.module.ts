@@ -10,6 +10,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { AuthService } from './auth.service';
 import { PostService } from './post.service';
 import { HttpClientModule } from '@angular/common/http';
+import { Camera } from '@ionic-native/camera/ngx/';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     { provide: ErrorHandler, useClass: ErrorHandler },
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     AuthService,
-    PostService
+    PostService,
+    Camera
   ],
   exports:[],
   bootstrap: [AppComponent]

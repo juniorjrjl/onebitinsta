@@ -1,3 +1,40 @@
 <ion-header>
   <app-header pageTitle="New Post"></app-header>
 </ion-header>
+ 
+<ion-content>
+  <app-profile [user]="user" isMe="true"></app-profile>
+ 
+  <form>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-button class="attach-file" (click)="takePicture()">
+            <ion-icon name="camera"></ion-icon>
+          </ion-button>
+        </ion-col>
+ 
+        <ion-col size="12">
+          <ion-button class="attach-file present" (click)="takePicture()">
+            <ion-icon name="camera"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+ 
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Description</ion-label>
+            <ion-textarea></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+ 
+      <ion-row>
+        <ion-col size="12">
+          <ion-button color="secondary" block>POST</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
