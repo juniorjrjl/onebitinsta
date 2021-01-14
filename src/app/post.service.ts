@@ -18,7 +18,7 @@ export class PostService {
     return this.formatPost(data);
   }
 
-  async userPost(userId){
+  async userPosts(userId){
     const response: any = await this.http.get<any>(`${API_URL}/api/v1/users/${userId}/posts`, { headers: this.authService.authHeader() }).toPromise();
     return this.formatPost(response);
   }

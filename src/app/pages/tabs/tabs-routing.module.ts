@@ -62,6 +62,15 @@ const routes: Routes = [
               import('../sign-out/sign-out.module').then(m => m.SignOutPageModule)
           }
         ]
+      },
+      {
+        path: 'user/:id',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../other-profile/other-profile.module').then(m => m.OtherProfilePageModule)
+          }
+        ]
       }
     ]
   }

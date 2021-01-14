@@ -7,15 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { SignOutPageRoutingModule } from './sign-out-routing.module';
 
 import { SignOutPage } from './sign-out.page';
-import { HeaderComponent } from '../../header/header.component';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SignOutPageRoutingModule
+    SignOutPageRoutingModule,
+    ComponentsModule
   ],
-  declarations: [SignOutPage, HeaderComponent]
+  declarations: [SignOutPage]
 })
 export class SignOutPageModule {}

@@ -1,0 +1,9 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+ 
+ 
+<ion-content>
+  <app-profile [user]="user" [isFollowing]="isFollowing" (onFollow)="follow()" (onUnfollow)="unfollow()"></app-profile>
+  <app-post-list [posts]="posts" showToolbar="show" currentList="group"></app-post-list>
+</ion-content>

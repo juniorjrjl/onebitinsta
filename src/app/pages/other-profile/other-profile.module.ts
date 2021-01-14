@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SearchPageRoutingModule } from './search-routing.module';
+import { OtherProfilePageRoutingModule } from './other-profile-routing.module';
 
-import { SearchPage } from './search.page';
+import { OtherProfilePage } from './other-profile.page';
 import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { ComponentsModule } from 'src/app/components/components.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    SearchPageRoutingModule,
+    OtherProfilePageRoutingModule,
     ComponentsModule
   ],
-  declarations: [SearchPage]
+  declarations: [OtherProfilePage]
 })
-export class SearchPageModule {}
+export class OtherProfilePageModule {}

@@ -1,0 +1,7 @@
+<ion-button slot="icon-only" color="secondary" *ngIf="!isFollowing" (click)="followEvent.emit(true);">
+  <ion-icon name="checkmark-circle"></ion-icon>
+</ion-button>
+ 
+<ion-button slot="icon-only" color="danger" *ngIf="isFollowing" (click)="followEvent.emit(false);">
+  <ion-icon name="close-circle"></ion-icon>
+</ion-button>

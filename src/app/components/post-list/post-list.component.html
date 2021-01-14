@@ -1,5 +1,5 @@
 <div class="buttons" *ngIf="showToolbar">
-  <ion-grid>
+  <ion-grid class="ion-no-padding">
     <ion-row>
       <ion-col>
         <ion-button expand="block" fill="clear" (click)="changeList('group')">
@@ -33,10 +33,10 @@
       <ion-grid>
         <ion-row>
           <ion-col size="2">
-            <img [src]="post.owner.photoUrl" />
+            <img [src]="post.owner.photoUrl" (click)="detailUser(post.owner)"/>
           </ion-col>
           <ion-col size="10">
-            <ion-title>{{ post.owner.name }}</ion-title>
+            <ion-title (click)="detailUser(post.owner)">{{ post.owner.name }}</ion-title>
           </ion-col>
         </ion-row>
         <ion-row>

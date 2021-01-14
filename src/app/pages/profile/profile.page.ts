@@ -39,7 +39,7 @@ export class ProfilePage {
  
  
   private loadPosts() {
-    this.postService.userPost(this.authService.currentUser.id)
+    this.postService.userPosts(this.authService.currentUser.id)
       .then((posts: Post[]) => this.posts = posts);
   }
 }

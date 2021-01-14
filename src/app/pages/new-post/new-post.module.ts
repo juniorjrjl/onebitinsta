@@ -7,15 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { NewPostPageRoutingModule } from './new-post-routing.module';
 
 import { NewPostPage } from './new-post.page';
-import { HeaderComponent } from '../../header/header.component';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    NewPostPageRoutingModule
+    NewPostPageRoutingModule,
+    ComponentsModule
   ],
-  declarations: [NewPostPage, HeaderComponent]
+  declarations: [NewPostPage]
 })
 export class NewPostPageModule {}

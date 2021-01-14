@@ -7,17 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { ProfilePageRoutingModule } from './profile-routing.module';
 
 import { ProfilePage } from './profile.page';
-import { HeaderComponent } from '../../header/header.component';
-import { ProfileComponent } from 'src/app/profile/profile.component';
-import { PostListComponent } from 'src/app/post-list/post-list.component';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ProfilePageRoutingModule
+    ProfilePageRoutingModule,
+    ComponentsModule
   ],
-  declarations: [ProfilePage, HeaderComponent, ProfileComponent, PostListComponent]
+  declarations: [ProfilePage]
 })
 export class ProfilePageModule {}
