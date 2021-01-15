@@ -1,0 +1,9 @@
+<ion-button *ngIf="!isLiked" class="like-button" (click)="like()" color="light">
+  <ion-icon name="heart-outline" color="danger"></ion-icon>
+</ion-button>
+ 
+<ion-button *ngIf="isLiked" class="like-button" (click)="unlike()" color="light">
+  <ion-icon name="heart" color="danger"></ion-icon>
+</ion-button>
+ 
+<ion-text color="danger" class="like-count">{{ likeCount }}</ion-text>
