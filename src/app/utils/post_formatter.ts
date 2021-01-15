@@ -1,6 +1,6 @@
-import { Hashtag } from "./models/hashtag";
-import { Post } from "./models/post";
-import { User } from "./models/user";
+import { Hashtag } from "../models/hashtag";
+import { Post } from "../models/post";
+import { User } from "../models/user";
 
 export class PostFormatter {
  

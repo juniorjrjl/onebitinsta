@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ToastController } from '@ionic/angular';
-import { API_URL } from './constants';
+import { API_URL } from '../utils/constants';
 import { Storage } from '@ionic/storage';
 
 @Injectable({

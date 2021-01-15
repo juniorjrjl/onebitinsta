@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { AuthService } from 'src/app/auth.service';
-import { PostService } from 'src/app/post.service';
+import { AuthService } from '../../services/auth.service';
+import { PostService } from '../../services/post.service';
 import { Post } from '../../models/post';
 import { User } from '../../models/user';
 

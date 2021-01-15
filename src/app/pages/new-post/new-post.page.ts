@@ -3,11 +3,11 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Camera,  CameraOptions} from '@ionic-native/camera/ngx';
 import { ToastController } from '@ionic/angular';
-import { AuthService } from 'src/app/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { Post } from 'src/app/models/post';
 import { User } from 'src/app/models/user';
-import { PostService } from 'src/app/post.service';
-import { UserService } from 'src/app/user.service';
+import { PostService } from '../../services/post.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-new-post',

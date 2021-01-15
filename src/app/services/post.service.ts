@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { AuthService } from './auth.service';
-import { API_URL } from './constants';
-import { Post } from './models/post';
-import { PostFormatter } from './post_formatter';
+import { API_URL } from '../utils/constants';
+import { Post } from '../models/post';
+import { PostFormatter } from '../utils/post_formatter';
 
 @Injectable({
   providedIn: 'root'

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Post } from 'src/app/models/post';
 import { User } from 'src/app/models/user';
-import { SearchService } from 'src/app/search.service';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-search',
