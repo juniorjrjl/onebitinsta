@@ -29,11 +29,11 @@ export class ProfileComponent {
 
   openFollowPage(){
     const navigationExtras: NavigationExtras ={
-      queryParams:{
+      state:{
         user: this.user
       }
     }
-    this.router.navigate(['Follow'], navigationExtras);
+    this.router.navigate(['tabs/follow'], navigationExtras);
   }
 
 }

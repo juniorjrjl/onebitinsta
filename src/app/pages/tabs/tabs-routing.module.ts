@@ -71,6 +71,15 @@ const routes: Routes = [
             loadChildren: () => import('../other-profile/other-profile.module').then(m => m.OtherProfilePageModule)
           }
         ]
+      },
+      {
+        path: 'follow',
+        children:[
+          {
+            path: '',
+            loadChildren: () => import('../follow/follow.module').then(m => m.FollowPageModule)
+          }
+        ]
       }
     ]
   }
