@@ -7,7 +7,7 @@
   <app-post-list [posts]="posts" showToolbar="show" currentList="group"></app-post-list>
  
   <ion-fab horizontal="start" vertical="bottom">
-    <ion-fab-button>
+    <ion-fab-button (click)="editProfile()">
       <ion-icon icon="create"></ion-icon>
     </ion-fab-button>
   </ion-fab>

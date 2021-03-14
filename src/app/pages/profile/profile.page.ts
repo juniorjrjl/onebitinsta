@@ -31,6 +31,10 @@ export class ProfilePage {
     this.router.navigate(['/tabs/post'])
   }
  
+  editProfile(){
+    this.router.navigate([`edit-profile/${this.currentUser.id}`])
+  }
+
  
   private loadUser(){
     this.userService.load(this.authService.currentUser.id)

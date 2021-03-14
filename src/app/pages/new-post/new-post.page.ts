@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Camera,  CameraOptions} from '@ionic-native/camera/ngx';
+import { Capacitor } from '@capacitor/core';
 import { ToastController } from '@ionic/angular';
 import { AuthService } from '../../services/auth.service';
 import { Post } from 'src/app/models/post';
@@ -20,29 +20,15 @@ export class NewPostPage {
   public post: Post;
   private base64Content = "";
   public postPhoto = "";
-  private cameraConfig: CameraOptions ={
-    quality: 100,
-    mediaType: this.camera.MediaType.PICTURE,
-    correctOrientation: true
-  }
 
   constructor(private authService: AuthService, 
               private userService: UserService, 
               private postService: PostService,
               private toast: ToastController,
-              private router: Router,
-              private camera: Camera) { }
+              private router: Router) { }
 
   ionVieWillEnter(){
     this.loadUser();
-  }
-
-  takePicture(){
-    this.camera.getPicture(this.cameraConfig)
-      .then(base64 => {
-        this.base64Content = base64;
-        this.postPhoto =  "data:image/jpeg;base64," + base64;
-      }, () => {});
   }
 
   createPost(form: NgForm) {
